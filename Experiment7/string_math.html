@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<body>
+<h2 align="center"><p style=color:red;>String methods</p></h2>
+<p><b>String methods help you to work with strings.<b></p>
+<hr>
+<script>
+ var name="Welcome to web";
+     document.write(name); 
+     document.write("<br>");
+
+     document.write("1.The length property returns the length of a string<br>");
+     document.write("*Length of the string is:");
+     document.write(name.length);
+     document.write("<br><br>"); 
+
+     document.write("2.The indexOf() method returns the index of the first occurrence of a specified text in a string<br>");
+     document.write("*Index of first occurence of 'to' in string is:");
+     document.write(name.indexOf("to")); 
+     document.write("<br><br>");
+
+     document.write("3.The search() method searches a string for a specified value and returns the position of the match<br>");
+     document.write("*Index of 'eb' in string:");
+     document.write(name.search("eb")); 
+     document.write("<br><br>");
+
+     document.write("4.slice() extracts a part of a string and returns the extracted part in a new string<br>");
+     document.write("*Index 0 to 3 print using slice:");
+     document.write(name.slice(0,4)); 
+     document.write("<br><br>");
+
+     document.write("5.substring() is similar to slice(),but cannot accept negative indexes<br>");
+     document.write("*To get substring of string using substring:");
+     document.write(name.substring(0,8)); 
+     document.write("<br><br>");
+
+     document.write("6.substr() is similar to slice(),the second parameter specifies the length of the extracted part<br>");
+     document.write("*To get substring of string using substr:");
+     document.write(name.substr(0,3)); 
+     document.write("<br><br>");
+       
+     document.write("7.The trim() method removes whitespace from both sides of a string<br>");
+     document.write("*Use trim:");
+     document.write(name.trim()); 
+     document.write("<br><br>");
+
+     document.write("8.The charAt() method returns the character at a specified index in a string<br>");
+     document.write("*New string that have character 5 on string:");
+     document.write(name.charAt(5)); 
+     document.write("<br/>");
+</script>
+<hr>
+<h2 align="center"><p style=color:red;>Math Objects</h2>
+<p><b>The JavaScript Math object allows you to perform mathematical tasks on numbers.<b></p>
+<hr>
+ <script type="text/javascript">
+     document.write("1.Math.PI returns the ratio of a circle's circumference to its diameter<br>");
+     document.write("*Value of PI: "); 
+     document.write(Math.PI);
+     document.write("<br><br>");
+
+     document.write("2.Math.round(x) returns the value of x rounded to its nearest integer<br>");
+     document.write("*Round the value 4.7 is: "); 
+     document.write(Math.round(4.7));
+     document.write("<br><br>");
+     
+     document.write("3.Math.pow(x, y) returns the value of x to the power of y<br>");
+     document.write("*The 2 nd power of 8 is: "); 
+     document.write(Math.pow(8,2));
+     document.write("<br><br>");
+
+     
+     document.write("4.Math.ceil(x) returns the value of x rounded up to its nearest integer<br>");
+     document.write("*Ceil the value 4.7 is: "); 
+     document.write(Math.ceil(4.7));
+     document.write("<br><br>");
+
+     document.write("5.Math.floor(x) returns the value of x rounded down to its nearest intege<br>");
+     document.write("*Floor value of the value 4.4 is: "); 
+     document.write(Math.floor(4.4));
+     document.write("<br><br>");  
+ 
+      document.write("6.Math.sqrt(x) returns the square root of x<br>");
+      document.write("*Square root  of 4 is: "); 
+      document.write(Math.sqrt(4));
+      document.write("<br><br>");
+
+      document.write("7.Math.abs(x) returns the absolute (positive) value of x<br>");
+      document.write("*Abolute value of -3 is:");
+      document.write(Math.abs(-3));
+      document.write("<br><br>");
+</script>
+</body>
+</html>
