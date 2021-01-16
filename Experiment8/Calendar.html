@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>calender</title>
+
+<script type="text/javascript">
+function calender()
+{
+   var year=document.getElementById('year').value;                
+   var mont = new Array();
+   mont[0] = "JANUARY";
+   mont[1] = "FEBRUARY";
+   mont[2] = "MARCH";
+   mont[3] = "APRIL";
+   mont[4] = "MAY";
+   mont[5] = "JUNE";
+   mont[6] = "JULY"; 
+   mont[7] = "AUGUST";
+   mont[8] = "SEPTEMBER";
+   mont[9] = "OCTOBER";
+   mont[10] = "NOVEMBER";
+   mont[11] = "DECEMBER";
+   document.write("<h1><center>CALENDAR "+year+  "</center></h1>");
+   document.write("<center><table border='3'><tr></center>");    //table start
+   for(month=0;month<12;month++)
+   {
+      dt=new Date(year, month, 01);    //place year,month(0--11),date format(eg:2020,1,1)
+   
+      var first_day=dt.getDay();    //first day of present month(which day)
+      
+      dt.setMonth(month+1,0);     //set to next month and one day backward ie last day of previous month(in dt,february s first days previous day ie last day of january ie 2020,1,31)
+      
+      var last_date=dt.getDate(); //last day of present month 31(get 31(get number ))
+ 
+      var dte=1;      //day variable for adjustment of starting date
+ 
+        if(month == 4 || month == 8)
+             {
+               document.write("</tr><tr>");  //change row after  4 every month    
+              }
+         document.write("<td>");
+         document.write("<center><b>" +mont[dt.getMonth()]+ "</b></center>");   //for month name in bold
+
+         document.write("<table><tr><td>SUN </td><td> MON </td><td> TUE </td><td> WED </td><td> THU </td><td> FRI </td><td> SAT </td></tr>");
+         
+         for(i=0;i<=41;i++)
+         {
+            if((i%7)==0)    //if week is over then start a new line
+             {
+               document.write("</tr><tr>");
+             }
+            if((i>= first_day) && (dte<= last_date))
+             {
+                document.write("<td>"+ dte +"</td>");
+                dte=dte+1;
+              }else
+              {
+                 document.write("<td>*</td>");
+              }  //blank date
+            }  //end of for loop
+            document.write("</tr></table>");
+          document.write("</td>")
+        }document.write("</tr></table>");
+ 
+}
+</script>
+        
+   
+</head>
+<body>
+  <p><input type="text" id="year" placeholder="Enter a year YYYY"/></p>
+  <p><input type="button" value="Calender" onclick="calender()"/>
+
+
+</body>
+</html>
