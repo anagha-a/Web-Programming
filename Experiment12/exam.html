@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<head>
+    <title>Online Exam</title>
+
+    <style>
+        body{
+            background-color: yellow;
+        }
+        .question-container{
+            margin: auto;
+            margin-bottom: 5px;
+            width: 70%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 2px 2px 1px #ddd;
+            border-radius: 5px;
+        }
+
+        .option-container{
+            padding: 5px 10px;
+        }
+
+        .submit-container{
+            text-align: center;
+        }
+        
+        .submit-container input{
+            background-color: #7ea04d;
+            border: 0;
+            padding: 5px 10px;
+            border-radius: 3px;
+            color: #fff;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="question-container">
+        <h2 style="text-align: center;margin: 0;"><p style="color:blue;">ONLINE EXAMINATION</p></h2>
+    </div>
+    <form name="examForm" onsubmit="return valuateExam()" onreset="onReset()"  method="get">
+        <div class="question-container">
+            <h3>1.Which language is used for creating Web Pages?</h3>
+            <div class="option-container">
+                <input type="radio" id="q1a" name="q1" value="PASCAL" required/>
+                <label for="q1a">PASCAL</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="q1b" name="q1" value="C"/>
+                <label for="q1">C</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="q1c" name="q1" value="HTML"/>
+                <label for="q1c">HTML</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="q1d" name="q1" value="BASIC"/>
+                <label for="q1d">BASIC</label>
+            </div>
+        </div>
+
+        <div class="question-container">
+            <h3>2. The entire web document is contained within ____</h3>
+            <div class="option-container">
+                <input type="radio" id="q2a" name="q2" value="Comments" required/>
+                <label for="q2a">Comments</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="q2b" name="q2" value="Tags"/>
+                <label for="q2">Tags</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="q2c" name="q2" value="Web page"/>
+                <label for="q2c">Web page</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="q2d" name="q2" value="HTML element"/>
+                <label for="q2d">HTML element</label>
+            </div>
+        </div>
+
+        <div class="question-container">
+            <h3>3. GIF is the abbreviation for ___</h3>
+            <div class="option-container">
+                <input type="radio" id="q3a" name="q3" value="Graphics Interchange Format" required/>
+                <label for="q3a">Graphics Interchange Format</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="q3b" name="q3" value="Graphics Instruction Format"/>
+                <label for="q3">Graphics Instruction Format</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="q3c" name="q3" value="Graphics Item Format"/>
+                <label for="q3c">Graphics Item Format</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="q3d" name="q3" value=" Graphics Information Format"/>
+                <label for="q3d"> Graphics Information Format</label>
+            </div>
+        </div>
+
+        <div class="question-container">
+            <h3>4. Which character is used to represent the closing of a tag in HTML?</h3>
+            <div class="option-container">
+                <input type="radio" id="q4a" name="q4" value="\" required/>
+                <label for="q4a">\</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="q4b" name="q4" value="!"/>
+                <label for="q4">!</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="q4c" name="q4" value="/"/>
+                <label for="q4c">/</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="q4d" name="q4" value="."/>
+                <label for="q4d">.</label>
+            </div>
+        </div>
+
+        <div class="question-container">
+            <h3>5.The ____ passes the information given by the user to a specified program.</h3>
+            <div class="option-container">
+                <input type="radio" id="q5a" name="q5" value="User" required/>
+                <label for="q5a">User</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="q5b" name="q5" value="Programmer"/>
+                <label for="q5">Programmer</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="q5c" name="q5" value="Web server"/>
+                <label for="q5c">Web server</label>
+            </div>
+            <div class="option-container">
+                <input type="radio" id="q5d" name="q5" value="Browser"/>
+                <label for="q5d">Browser</label>
+            </div>
+        </div>
+        <div class="question-container submit-container ">
+            <input type="submit" value="Submit"/>
+            <input style="background-color: #374045;" type="reset">
+
+            <h2 id='marks'></h2>
+        </div>
+        
+    </form>
+
+    <script>
+        function valuateExam(){
+            marks = 0;
+            if(document.examForm.q1.value == "HTML"){
+                marks += 1;
+            }
+            if(document.examForm.q2.value == "HTML element"){
+                marks += 1;
+            }
+            if(document.examForm.q3.value == "Graphics Interchange Format"){
+                marks += 1;
+            }
+            if(document.examForm.q4.value == "/"){
+                marks += 1;
+            }
+            if(document.examForm.q5.value == "Web server"){
+                marks += 1;
+            }
+
+            document.getElementById('marks').innerHTML = 'Your Marks: ' + marks + '/5';
+            console.log(marks);
+            return false;
+        }
+
+        function onReset(){
+            document.getElementById('marks').innerHTML = ''
+        }
+    </script>
+</body>
+</html>
